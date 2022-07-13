@@ -1,9 +1,13 @@
+import BottomBar from "../components/BottomBar";
+import Editor from "../components/Editor";
+
 function Home() {
-    return (
-        <div className="container">
-            <h1>Home Page</h1>
-        </div>
-    )
+	return (
+		<>
+			<Editor />
+			<BottomBar />
+		</>
+	);
 }
 
 export default Home;
