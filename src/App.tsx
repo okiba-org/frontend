@@ -6,8 +6,12 @@ function App() {
 	return (
 		<Router>
 			<div
-				className="App"
-				style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
+				className="container"
+				style={{
+					display: "flex",
+					flexDirection: "column",
+					height: "100%",
+				}}>
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/:id" element={<Paste />} />

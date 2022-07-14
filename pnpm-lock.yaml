@@ -1,22 +1,26 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@codemirror/view': ^6.0.3
+  '@lezer/highlight': ^1.0.0
   '@types/react': ^18.0.0
   '@types/react-dom': ^18.0.0
   '@types/react-router-dom': ^5.3.3
+  '@uiw/codemirror-themes': ^4.11.4
+  '@uiw/react-codemirror': ^4.11.4
   '@vitejs/plugin-react': ^1.3.0
-  codemirror: ^6.0.1
   react: ^18.0.0
-  react-codemirror2: ^7.2.1
   react-dom: ^18.0.0
   react-router-dom: ^6.3.0
   typescript: ^4.6.3
   vite: ^2.9.9
 
 dependencies:
-  codemirror: 6.0.1
+  '@codemirror/view': 6.0.3
+  '@lezer/highlight': 1.0.0
+  '@uiw/codemirror-themes': 4.11.4
+  '@uiw/react-codemirror': 4.11.4_zkjxn7zmjazops4ey5en2fchna
   react: 18.2.0
-  react-codemirror2: 7.2.1_zuovgz2ulb34y4plqf6p2rpz4q
   react-dom: 18.2.0_react@18.2.0
   react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
 
@@ -347,6 +351,15 @@ packages:
     resolution: {integrity: sha512-qbUr94DZTe6/V1VS7LDLz11rM/1t/nJxR1El4I6UaxDEdc0aZZvq6JCLJWiRmUf95NRAnDH6fhXn+PWp9wGCIg==}
     dev: false
 
+  /@codemirror/theme-one-dark/6.0.0:
+    resolution: {integrity: sha512-jTCfi1I8QT++3m21Ui6sU8qwu3F/hLv161KLxfvkV1cYWSBwyUanmQFs89ChobQjBHi2x7s2k71wF9WYvE8fdw==}
+    dependencies:
+      '@codemirror/language': 6.2.0
+      '@codemirror/state': 6.1.0
+      '@codemirror/view': 6.0.3
+      '@lezer/highlight': 1.0.0
+    dev: false
+
   /@codemirror/view/6.0.3:
     resolution: {integrity: sha512-1gDBymhbx2DZzwnR/rNUu1LiQqjxBJtFiB+4uLR6tHQ6vKhTIwUsP5uZUQ7SM7JxVx3UihMynnTqjcsC+mczZg==}
     dependencies:
@@ -457,6 +470,42 @@ packages:
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
     dev: true
+
+  /@uiw/codemirror-extensions-basic-setup/4.11.4:
+    resolution: {integrity: sha512-pc9pQtCQFmAH5nV9UmX37VB0+yzSFQ2kbSvLHBFST9siYnacaR6HxmkBBBbYYXwVK/n9pGZ6A8ZefAUNTFfo/A==}
+    dependencies:
+      '@codemirror/autocomplete': 6.0.4
+      '@codemirror/commands': 6.0.1
+      '@codemirror/language': 6.2.0
+      '@codemirror/lint': 6.0.0
+      '@codemirror/search': 6.0.0
+      '@codemirror/state': 6.1.0
+      '@codemirror/view': 6.0.3
+    dev: false
+
+  /@uiw/codemirror-themes/4.11.4:
+    resolution: {integrity: sha512-tp4wahAuGRhMoKNMk/6lt8nNr21UZ4zhFqdDTZZ4jLc2w4BKTQ23AkublXAM8vMSuYt/LpE+cajuq4/aSYn01w==}
+    dependencies:
+      '@codemirror/language': 6.2.0
+      '@codemirror/state': 6.1.0
+      '@codemirror/view': 6.0.3
+    dev: false
+
+  /@uiw/react-codemirror/4.11.4_zkjxn7zmjazops4ey5en2fchna:
+    resolution: {integrity: sha512-p7DNBI6kj+DUzTe7MjBJwZ3qo0nSOav7T0MEGRpRNZA9ZO3RnzhPMie6swDA8e3dz1s59l9UdFB1fgyam1vFhQ==}
+    peerDependencies:
+      '@codemirror/view': '>=6.0.0'
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+    dependencies:
+      '@babel/runtime': 7.18.6
+      '@codemirror/theme-one-dark': 6.0.0
+      '@codemirror/view': 6.0.3
+      '@uiw/codemirror-extensions-basic-setup': 4.11.4
+      codemirror: 6.0.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    dev: false
 
   /@vitejs/plugin-react/1.3.2:
     resolution: {integrity: sha512-aurBNmMo0kz1O4qRoY+FM4epSA39y3ShWGuqfLRA/3z0oEJAdtoSfgA3aO98/PCCHAqMaduLxIxErWrVKIFzXA==}
@@ -882,16 +931,6 @@ packages:
       picocolors: 1.0.0
       source-map-js: 1.0.2
     dev: true
-
-  /react-codemirror2/7.2.1_zuovgz2ulb34y4plqf6p2rpz4q:
-    resolution: {integrity: sha512-t7YFmz1AXdlImgHXA9Ja0T6AWuopilub24jRaQdPVbzUJVNKIYuy3uCFZYa7CE5S3UW6SrSa5nAqVQvtzRF9gw==}
-    peerDependencies:
-      codemirror: 5.x
-      react: '>=15.5 <=16.x'
-    dependencies:
-      codemirror: 6.0.1
-      react: 18.2.0
-    dev: false
 
   /react-dom/18.2.0_react@18.2.0:
     resolution: {integrity: sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==}

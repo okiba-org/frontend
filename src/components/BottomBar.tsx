@@ -1,6 +1,6 @@
 const BottomBar = () => {
 	return (
-		<div
+		<footer
 			style={{
 				height: "5vh",
 				minHeight: "30px",
@@ -9,7 +9,6 @@ const BottomBar = () => {
 				alignItems: "center",
 				justifyContent: "space-between",
 				paddingInline: "20px",
-				justifySelf: "end",
 			}}
 			className="BottomBar">
 			<a
@@ -26,8 +25,8 @@ const BottomBar = () => {
 				className="controls"
 				style={{
 					display: "flex",
-					justifyItems: "center",
 					marginBottom: "2px",
+					alignItems: "center",
 				}}>
 				<ButtonControl text="raw" link="/" />
 				<Separator />
@@ -35,7 +34,7 @@ const BottomBar = () => {
 				<Separator />
 				<ButtonControl text="source" link="/" />
 			</ul>
-		</div>
+		</footer>
 	);
 };
 

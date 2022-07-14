@@ -1,19 +1,22 @@
+import CodeMirror from "@uiw/react-codemirror";
+import { GithubDark } from "./EditorTheme";
+
 const Editor = () => {
 	return (
-		<textarea
+		// TODO: custom implementation?
+		// TODO: fix line wrap
+		<CodeMirror
 			className="editor"
 			autoFocus={true}
+			height="100%"
 			style={{
-				width: "auto",
-				backgroundColor: "black",
-				padding: "10px",
-				resize: "none",
-				borderWidth: 0,
+				width: "100%",
 				flex: 1,
-				color: "#fbfbfb",
-				fontSize: 16,
-				outline: "none",
+				overflowY: "auto",
+				fontFamily: "IBM Plex Mono",
+				fontSize: "1rem",
 			}}
+			theme={GithubDark}
 		/>
 	);
 };
