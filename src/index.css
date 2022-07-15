@@ -6,10 +6,8 @@
 }
 
 body {
-  font-family: "IBM Plex Mono", monospace;
   background: black;
   color: white;
-  /* min-height: 100%; */
 }
 
 #root {

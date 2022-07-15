@@ -1,48 +1,19 @@
 import CodeMirror from "@uiw/react-codemirror";
-import React, { useCallback, useState } from "react";
-import { GithubDark } from "./EditorTheme";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { FunctionComponent } from "react";
+import Theme from "./EditorTheme";
 
-const Editor = () => {
-	const [code, setCode] = useState("");
-	let navigate = useNavigate();
-
-	// TODO: fix this callback thing later
-	const postPaste = useCallback(async () => {
-		let res = await axios.post("http://localhost:8080/bin/paste", code, {
-			headers: { "Content-type": "text/plain" },
-		});
-
-		if (res.status !== 200) {
-			alert("Something went wrong!");
-			console.log(res);
-		}
-		navigate(`/${res.data["endpoint"]}`);
-	}, [code]);
-
-	const handleSavePaste = async (
-		event: React.KeyboardEvent<HTMLInputElement>,
-	) => {
-		if ((event.ctrlKey || event.metaKey) && event.code === "KeyS") {
-			event.preventDefault();
-			postPaste();
-		}
-	};
-
-	const placeholder = `// paste code here, use ctrl + s to save`;
+const Editor: FunctionComponent<propTypes> = props => {
 	return (
 		// TODO: custom implementation?
 		// TODO: fix line wrap
 		<CodeMirror
 			className="editor"
 			autoFocus={true}
-			onKeyDown={handleSavePaste}
-			placeholder={placeholder}
+			value={props.value}
+			onKeyDown={e => props.keyEvent(e)}
+			placeholder={props.placeholder}
 			height="100%"
-			onChange={(value: string) => {
-				setCode(value);
-			}}
+			onChange={val => props.setCode(val)}
 			style={{
 				width: "100%",
 				flex: 1,
@@ -50,9 +21,27 @@ const Editor = () => {
 				fontFamily: "IBM Plex Mono",
 				fontSize: "1rem",
 			}}
-			theme={GithubDark}
+			editable={props.editable}
+			readOnly={props.readonly}
+			theme={Theme}
 		/>
 	);
 };
+
+Editor.defaultProps = {
+	placeholder: `// paste code here, use ctrl + s to save`,
+	readonly: false,
+	editable: true,
+	value: "",
+};
+
+interface propTypes {
+	readonly?: boolean;
+	editable?: boolean;
+	placeholder?: string;
+	value: string;
+	setCode: Function;
+	keyEvent: Function;
+}
 
 export default Editor;

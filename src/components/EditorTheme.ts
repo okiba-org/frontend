@@ -1,7 +1,8 @@
 import { tags as t } from "@lezer/highlight";
 import { createTheme } from "@uiw/codemirror-themes";
 
-export const GithubDark = createTheme({
+// custom theme based on GitHub dark theme
+export default createTheme({
 	theme: "dark",
 	settings: {
 		background: "black",
