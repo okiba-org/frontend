@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { getPaste } from "../api/bin";
-import BottomBar from "../components/BottomBar";
-import Editor from "../components/Editor";
 
-function Paste() {
-	const { id } = useParams();
-	const [code, setCode] = useState("");
-	const navigate = useNavigate();
+const Raw = () => {
+	let navigate = useNavigate();
+	let [code, setCode] = useState("");
+	let { id } = useParams();
 
 	const getCode = async () => {
 		if (id == undefined) {
@@ -33,17 +31,9 @@ function Paste() {
 
 	return (
 		<>
-			<Editor
-				setCode={() => {}}
-				value={code}
-				keyEvent={() => {}}
-				editable={false}
-				readonly={true}
-				placeholder={""}
-			/>
-			<BottomBar isNewPaste={false} postCallback={undefined} />
+			<pre>{code}</pre>
 		</>
 	);
-}
+};
 
-export default Paste;
+export default Raw;

@@ -28,7 +28,7 @@ function Home() {
 	return (
 		<>
 			<Editor setCode={setCode} value={code} keyEvent={handleSaveKey} />
-			<BottomBar />
+			<BottomBar isNewPaste={true} postCallback={postPaste} />
 		</>
 	);
 }

@@ -1,4 +1,7 @@
-const BottomBar = () => {
+import { FunctionComponent } from "react";
+import { useParams } from "react-router-dom";
+
+const BottomBar: FunctionComponent<propTypes> = props => {
 	return (
 		<footer
 			style={{
@@ -28,33 +31,48 @@ const BottomBar = () => {
 					marginBottom: "2px",
 					alignItems: "center",
 				}}>
-				<ButtonControl text="raw" link="/" />
+				{/* make component of these links some day */}
+
+				{props.isNewPaste ? (
+					<a
+						href="#"
+						onClick={async () => {
+							if (props.postCallback != undefined) {
+								await props.postCallback();
+							}
+						}}
+						style={linkStyle}>
+						<li style={listStyle}>save</li>
+					</a>
+				) : (
+					<a href={`/raw/${useParams().id}`} style={linkStyle}>
+						<li style={listStyle}>raw</li>
+					</a>
+				)}
 				<Separator />
-				<ButtonControl text="save" link="/" />
+				<a href={"/"} style={linkStyle}>
+					<li style={listStyle}>new</li>
+				</a>
 				<Separator />
-				<ButtonControl text="source" link="/" />
+				<a
+					href={"https://github.com/okiba-org/"}
+					target="_blank"
+					style={linkStyle}>
+					<li style={listStyle}>source</li>
+				</a>
 			</ul>
 		</footer>
 	);
 };
 
-const ButtonControl = (props: tControlProps) => {
-	return (
-		<a
-			href={props.link}
-			style={{
-				color: "white",
-			}}>
-			<li
-				style={{
-					marginInline: "10px",
-					listStyle: "none",
-					fontSize: "1rem",
-				}}>
-				{props.text}
-			</li>
-		</a>
-	);
+const linkStyle = {
+	color: "white",
+};
+
+const listStyle = {
+	marginInline: "10px",
+	listStyle: "none",
+	fontSize: "1rem",
 };
 
 const Separator = () => (
@@ -67,9 +85,9 @@ const Separator = () => (
 	</div>
 );
 
-interface tControlProps {
-	text: string;
-	link: string;
+interface propTypes {
+	isNewPaste: boolean;
+	postCallback: Function | undefined;
 }
 
 export default BottomBar;
