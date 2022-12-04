@@ -11,12 +11,11 @@ const BottomBar: FunctionComponent<propTypes> = props => {
 				display: "flex",
 				alignItems: "center",
 				justifyContent: "space-between",
-				paddingInline: "20px",
+				paddingInline: "15px",
 			}}
 			className="BottomBar">
 			<a
 				style={{
-					fontSize: "1.1rem",
 					color: "#D9F8C4",
 					cursor: "pointer",
 					textDecoration: "none",
@@ -72,7 +71,7 @@ const linkStyle = {
 const listStyle = {
 	marginInline: "10px",
 	listStyle: "none",
-	fontSize: "1rem",
+	fontSize: "2vh",
 };
 
 const Separator = () => (

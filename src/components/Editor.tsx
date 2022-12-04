@@ -1,3 +1,4 @@
+import { EditorView } from "@codemirror/view";
 import CodeMirror from "@uiw/react-codemirror";
 import { FunctionComponent } from "react";
 import Theme from "./EditorTheme";
@@ -24,6 +25,7 @@ const Editor: FunctionComponent<propTypes> = props => {
 			editable={props.editable}
 			readOnly={props.readonly}
 			theme={Theme}
+			extensions={[EditorView.lineWrapping]}
 		/>
 	);
 };
