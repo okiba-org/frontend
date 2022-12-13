@@ -1,13 +1,25 @@
-export const setPaste = async (code: string): Promise<Response> => {
-	return await fetch("http://localhost:8080/bin/paste", {
-		method: "POST",
-		headers: { "Content-type": "text/plain" },
-		body: code,
-	});
+import { SERVER_URL } from "../util";
+
+export const setPaste = async (code: string) => {
+	try {
+		return await fetch(SERVER_URL + "/bin/paste", {
+			method: "POST",
+			headers: { "Content-type": "text/plain" },
+			body: code,
+		});
+	} catch (err) {
+		console.error(err);
+		return null;
+	}
 };
 
 export const getPaste = async (pasteId: string) => {
-	return await fetch(`http://localhost:8080/bin/paste/${pasteId}`);
+	try {
+		const response = await fetch(`${SERVER_URL}/bin/paste/${pasteId}`);
+		return response;
+	} catch (err) {
+		return null;
+	}
 };
 
 export interface SuccessResponse {

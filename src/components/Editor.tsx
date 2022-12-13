@@ -6,7 +6,6 @@ import Theme from "./EditorTheme";
 const Editor: FunctionComponent<propTypes> = props => {
 	return (
 		// TODO: custom implementation?
-		// TODO: fix line wrap
 		<CodeMirror
 			className="editor"
 			autoFocus={true}

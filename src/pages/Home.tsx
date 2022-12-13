@@ -9,12 +9,20 @@ function Home() {
 	const navigate = useNavigate();
 
 	const postPaste = useCallback(async () => {
-		const res: Response = await setPaste(code);
-		if (res.status !== 200) {
+		const res: Response | null = await setPaste(code);
+
+		if (res == null) {
+			alert("Couldn't save paste, something went wrong.");
+			return;
+		}
+
+		if (!res?.ok) {
 			alert("Something went wrong!");
 			console.log(res);
+			return;
 		}
-		let data: SuccessResponse = await res.json();
+
+		let data: SuccessResponse = await res?.json();
 		navigate(`/${data.endpoint}`);
 	}, [code]);
 

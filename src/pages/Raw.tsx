@@ -13,14 +13,19 @@ const Raw = () => {
 			return navigate("/");
 		}
 
-		const res: Response = await getPaste(id);
+		const res: Response | null = await getPaste(id);
 
-		if (res.status == 404) {
+		if (res == null) {
+			alert("Couldn't connect to the server, something went wrong.");
+			navigate("/");
+		}
+
+		if (res?.status == 404) {
 			alert("Paste not found!");
 			navigate("/");
 		}
 
-		if (res.status == 200) {
+		if (res?.status == 200) {
 			setCode(await res.text());
 		}
 	};
