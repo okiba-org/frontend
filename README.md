@@ -4,6 +4,8 @@ This repository contains okiba bin's front-end code. The web app is using codemi
 
 ## Usage
 
+Add server URL in `.env.local` with `VITE_SERVER_URL` key.
+
 ```shell
 // get deps
 $ pnpm install
