@@ -13,14 +13,16 @@ const BottomBar: FunctionComponent<propTypes> = props => {
 				justifyContent: "space-between",
 				paddingInline: "15px",
 			}}
-			className="BottomBar">
+			className="BottomBar"
+		>
 			<a
 				style={{
 					color: "#D9F8C4",
 					cursor: "pointer",
 					textDecoration: "none",
 				}}
-				href="/">
+				href="/"
+			>
 				<b>Okiba</b> v1.0
 			</a>
 			<ul
@@ -29,7 +31,8 @@ const BottomBar: FunctionComponent<propTypes> = props => {
 					display: "flex",
 					marginBottom: "2px",
 					alignItems: "center",
-				}}>
+				}}
+			>
 				{/* make component of these links some day */}
 
 				{props.isNewPaste ? (
@@ -40,7 +43,8 @@ const BottomBar: FunctionComponent<propTypes> = props => {
 								await props.postCallback();
 							}
 						}}
-						style={linkStyle}>
+						style={linkStyle}
+					>
 						<li style={listStyle}>save</li>
 					</a>
 				) : (
@@ -56,7 +60,8 @@ const BottomBar: FunctionComponent<propTypes> = props => {
 				<a
 					href={"https://github.com/okiba-org/"}
 					target="_blank"
-					style={linkStyle}>
+					style={linkStyle}
+				>
 					<li style={listStyle}>source</li>
 				</a>
 			</ul>
@@ -79,7 +84,8 @@ const Separator = () => (
 		style={{
 			fontSize: "1rem",
 			color: "#839496",
-		}}>
+		}}
+	>
 		•
 	</div>
 );

@@ -12,7 +12,8 @@ function App() {
 					display: "flex",
 					flexDirection: "column",
 					height: "100%",
-				}}>
+				}}
+			>
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/:id" element={<Paste />} />
