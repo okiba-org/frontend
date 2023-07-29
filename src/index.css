@@ -2,12 +2,14 @@
 
 * {
 	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 	font-family: "IBM Plex Mono", monospace;
 }
 
 body {
 	background: black;
-	color: white;
+	color: rgba(255, 255, 255, 0.774);
 }
 
 #root {

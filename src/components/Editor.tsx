@@ -5,7 +5,6 @@ import Theme from "./EditorTheme";
 
 const Editor: FunctionComponent<propTypes> = props => {
 	return (
-		// TODO: custom implementation?
 		<CodeMirror
 			className="editor"
 			autoFocus={true}
@@ -19,7 +18,7 @@ const Editor: FunctionComponent<propTypes> = props => {
 				flex: 1,
 				overflowY: "auto",
 				fontFamily: "IBM Plex Mono",
-				fontSize: "1rem",
+				fontSize: "1.2rem",
 			}}
 			editable={props.editable}
 			readOnly={props.readonly}

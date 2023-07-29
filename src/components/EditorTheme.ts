@@ -6,9 +6,8 @@ export default createTheme({
 	theme: "dark",
 	settings: {
 		background: "black",
-		// gutterBackground: "#0B0E14",
-		gutterBackground: "black",
-		gutterForeground: "#B8D7A3",
+		gutterBackground: "black", // line number background
+		gutterForeground: "gray", // line number
 		foreground: "#c9d1d9",
 		caret: "#c9d1d9",
 		selection: "#003d73",
